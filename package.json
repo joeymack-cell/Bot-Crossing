@@ -1,0 +1,49 @@
+{
+  "name": "bot-crossing",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A Windows desktop city for your local Codex sessions, with built-in chat, individual agents, and customizable session buildings.",
+  "license": "MIT",
+  "author": "Jarren Rocks",
+  "keywords": [
+    "claude-code",
+    "coding-agent",
+    "three.js",
+    "webgl",
+    "colony-sim",
+    "developer-tools",
+    "visualization"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
+  "os": [
+    "darwin",
+    "win32",
+    "linux"
+  ],
+  "scripts": {
+    "dev": "npm run assets --silent && vite",
+    "build": "npm run assets --silent && vite build",
+    "start": "vite build && node server/serve.mjs",
+    "serve": "node server/serve.mjs",
+    "assets": "node tools/build-assets.mjs",
+    "test": "node --test",
+    "desktop": "electron desktop/main.cjs",
+    "package:windows": "npm run build && node desktop/package-windows.mjs"
+  },
+  "dependencies": {
+    "@mdi/js": "^7.4.47",
+    "dompurify": "^3.4.13",
+    "marked": "^18.0.9",
+    "three": "^0.185.0"
+  },
+  "devDependencies": {
+    "@gltf-transform/core": "^4.4.2",
+    "@gltf-transform/functions": "^4.4.2",
+    "electron": "^44.2.0",
+    "rcedit": "^5.0.2",
+    "vite": "^7.1.0"
+  }
+}
